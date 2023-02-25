@@ -72,9 +72,9 @@ public class stepDefinitions {
     public void the_user_enter_the_product_name_and_clicks_on_the_enter_your_pincode_button() throws InterruptedException
         {
            homePage = new HomePage(driver);
-           homePage.getSearchBox().sendKeys(data.get("TypeValue"));
+           homePage.getSearchBox().sendKeys("womens kurti");
            homePage.getSearchBox().sendKeys(Keys.ENTER);
-           homePage.getPincode_button().sendKeys(data.get("SearchValue"));
+           homePage.getPincode_button().sendKeys("444101");
            homePage.getPincode_button().sendKeys(Keys.ENTER);
        }
 
@@ -94,9 +94,9 @@ public void theUserNavigatesToTheHomePage() {
 @When("the user enter the product name and clicks on the enter your pincode button and trying to enter invalid pincode")
 public void the_user_enter_the_product_name_and_clicks_on_the_enter_your_pincode_button_and_trying_to_enter_invalid_pincode() {
     homePage = new HomePage(driver);
-    homePage.getSearchBox().sendKeys(data.get("TypeValue"));
+    homePage.getSearchBox().sendKeys("womens kurti");
     homePage.getSearchBox().sendKeys(Keys.ENTER);
-    homePage.getSearchInvalidPincode().sendKeys(data.get("SearchValue"));
+    homePage.getSearchInvalidPincode().sendKeys("111111");
     homePage.getSearchInvalidPincode().sendKeys(Keys.ENTER);
     homePage.getSearchResultPincode().click();
     }
@@ -119,10 +119,7 @@ public void it_Will_Show_The_Related_Search_Result_Is_Available_For_Entered_Pinc
         homePage.getSearchBox().click();
         homePage.getSearchBox().sendKeys(product);
 
-
-
-
-}
+    }
 
     @Then("the products {string} should be displayed")
     public void theProductsShouldBeDisplayed(String result) {
