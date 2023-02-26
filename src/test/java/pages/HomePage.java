@@ -65,4 +65,17 @@ public class HomePage {
         return SearchInvalid_button;
     }
 
+    //Invalid Search
+    @FindBy(xpath = "//input[@class=\"col-xs-20 searchformInput keyword\"]\")")
+    WebElement InvalidSearch;
+    @FindBy(xpath = "//span[@class=\"alert-heading\"]\")")
+    WebElement InvalidSearchButton;
+
+    public WebElement getInvalidSearch() {
+        return InvalidSearch;
+    }
+
+    public WebElement getInvalidSearchButton() {
+        return InvalidSearchButton;
+    }
 }

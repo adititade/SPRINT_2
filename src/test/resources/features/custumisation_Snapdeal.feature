@@ -18,6 +18,12 @@ Feature: Check the user can access the search bar
       When the user enter the product name and clicks on the enter your pincode button and trying to enter invalid pincode
       Then it will show the related search result is available for entered pincode or not
 
+@string
+  Scenario: Verify that user is not able to search for invalid result.
+  Given the User navigate to the home page
+  When the user enter the invalid search and press enter
+  Then it will show that something wents wrong
+
     Scenario Outline:  Verify that the user is able to search two products
       Given the user navigate to home page
       When the user enter the "<product>"

@@ -105,6 +105,28 @@ public void it_Will_Show_The_Related_Search_Result_Is_Available_For_Entered_Pinc
         String text = homePage.getSearchInvalid_button().getText();
         Assert.assertEquals(text, "");
 }
+
+//Invalid search
+    @Given("the User navigate to the home page")
+    public void theUserNavigateToTheHomePage() {
+        url = QaProps.getValue("url");
+        driver.get(url);
+        data = TestDataReader.getData(scenario.getName());
+    }
+
+    @When("the user enter the invalid search and press enter")
+    public void theUserEnterTheInvalidSearchAndPressEnter() {
+        homePage = new HomePage(driver);
+        homePage.getSearchBox().sendKeys(data.get("TypeValue"));
+        homePage.getSearchBox().sendKeys(Keys.ENTER);
+
+    }
+    @Then("it will show that something wents wrong")
+    public void itWillShowThatSomethingWentsWrong() {
+        String value = homePage.getSearchResult().getText();
+        Assert.assertEquals(value, data.get("SearchValue"));
+    }
+
 //Multiple search
     @Given("the user navigate to home page")
     public void theUserNavigateToHomePage() {
@@ -126,7 +148,7 @@ public void it_Will_Show_The_Related_Search_Result_Is_Available_For_Entered_Pinc
         String text =  homePage.getSearchResult().getText();
         Assert.assertTrue(text.contains(result));
     }
-    }
+}
 
 
 
