@@ -123,8 +123,8 @@ public void it_Will_Show_The_Related_Search_Result_Is_Available_For_Entered_Pinc
     }
     @Then("it will show that something wents wrong")
     public void itWillShowThatSomethingWentsWrong() {
-        String value = homePage.getSearchResult().getText();
-        Assert.assertEquals(value, data.get("SearchValue"));
+        String text = homePage.getSearchResult().getText();
+        Assert.assertEquals(text, data.get("SearchValue"));
     }
 
 //Multiple search
