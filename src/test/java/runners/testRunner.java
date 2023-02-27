@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(features = "src/test/resources/features", glue = "steps", publish = true,
-        plugin = {"pretty", "html:target/cucumber-reports.html"}, monochrome = true)
+        plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber-reports.json"}, monochrome = true)
 
 public class testRunner extends AbstractTestNGCucumberTests {
     @DataProvider
