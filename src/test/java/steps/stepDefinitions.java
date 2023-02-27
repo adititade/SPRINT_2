@@ -138,15 +138,16 @@ public void it_Will_Show_The_Related_Search_Result_Is_Available_For_Entered_Pinc
 
     @When("the user enter the {string}")
     public void theUserEnterThe(String product) {
-        homePage.getSearchBox().click();
-        homePage.getSearchBox().sendKeys(product);
+       String keys =  homePage.getSearchBox().getText();
+        Assert.assertEquals(keys, "products");
+       // homePage.getSearchBox().sendKeys(product);
 
     }
 
     @Then("the products {string} should be displayed")
     public void theProductsShouldBeDisplayed(String result) {
-        String text =  homePage.getSearchResult().getText();
-        Assert.assertTrue(text.contains(result));
+        String text =  homePage.getSearchProduct().getText();
+        Assert.assertEquals(text, "result");
     }
 }
 

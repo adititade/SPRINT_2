@@ -78,4 +78,11 @@ public class HomePage {
     public WebElement getInvalidSearchButton() {
         return InvalidSearchButton;
     }
+
+    @FindBy(xpath = "//input[@class=\"col-xs-20 searchformInput keyword\"]")
+    WebElement SearchProduct;
+
+    public WebElement getSearchProduct() {
+        return SearchProduct;
+    }
 }
