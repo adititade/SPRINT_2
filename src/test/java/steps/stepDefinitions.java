@@ -148,6 +148,7 @@ public void it_Will_Show_The_Related_Search_Result_Is_Available_For_Entered_Pinc
     public void theProductsShouldBeDisplayed(String result) {
         String text =  homePage.getSearchProduct().getText();
         Assert.assertEquals(text, "result");
+
     }
 }
 
